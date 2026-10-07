@@ -128,7 +128,7 @@ section p{
 
     -ms-transform: rotate(0deg); /* IE 9 */
     -webkit-transform: rotate(0deg); /* Safari */
-    transform: scale(1,2);rotate(0deg); /* Standard syntax */
+    transform: rotate(0deg); /* Standard syntax */
 	
 	transition: transform 1.5s;
 	-webkit-transition: transform 1.5s;
@@ -138,8 +138,81 @@ section p{
 .card:hover img{
 	-ms-transform: rotate(-20deg); /* IE 9 */
     -webkit-transform: rotate(-20deg); /* Safari */
-    transform: scale(1,2);rotate(-20deg); /* Standard syntax */
+    transform:rotate(-20deg); /* Standard syntax */
+}
+
+/*article*/
+article{
+	width:100%;
+    height: 500px;
+	margin:auto;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
 
 
+article:hover{
+	cursor:pointer;	
+}
+
+.a_left{ position:relative;
+	float:left;
+	width:50%;
+    height:100%;
+   
+}
+
+.a_left img{
+	float:left;
+	width:100%;
+    height:100%;
+	object-fit:cover;
+}
+
+.a_right{
+	float:left;
+	width:50%;
+    height:100%;
+	padding: 4%;
+	box-sizing:border-box;
+	background:rgba(255, 255, 255, 1);
+	color:rgba(69, 9, 32, 1);
+	text-align:left;
+    line-height: 2rem;
+    
+    transition: color 0.5s, background 0.5s;
+	-webkit-transition: color 0.5s, background 0.5s; /*前綴詞*/
+	
+	transition-timing-function:linear;
+	-webkit-transition-timing-function: linear;/* Safari */
 
 }
+
+article:hover .a_right{
+	background:rgb(244, 250, 186);
+    color:rgba(69, 9, 32, 1);
+}
+
+
+.moreb{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	
+	background:rgb(141, 229, 246);
+	padding:30px;
+	color: rgb(37, 141, 225);border-radius: 50%;border-color: rgb(249, 249, 252);border-style: solid;border-width: 3px;
+    opacity:0;
+	transition: opacity 1s;
+	-webkit-transition: opacity 1s;/*前綴詞*/
+	
+	transition-timing-function: ease-in-out;
+	-webkit-transition-timing-function: ease-in-out;/* Safari */
+
+}
+
+article:hover .moreb{
+	opacity:1;
+}
+
