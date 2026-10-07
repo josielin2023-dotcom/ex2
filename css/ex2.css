@@ -105,6 +105,11 @@ section h2{
     text-align: center;
 }
 
+section p{
+    color:rgba(69, 9, 32, 1);
+    text-align: center;
+}
+
 
 /*card*/
 .card{
