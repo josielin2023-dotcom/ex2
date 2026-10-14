@@ -2,7 +2,11 @@ body{
     padding: 0;
     margin: 0;
     font-size: 1.2rem;
+    font-family: "Roboto", sans-serif;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 a{
     text-decoration: none;
