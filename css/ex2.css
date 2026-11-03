@@ -1,222 +1,261 @@
-body{
+body {
     padding: 0;
     margin: 0;
     font-size: 1.2rem;
-    font-family: "Roboto", sans-serif;
+    font-family: "Noto Serif TC", Georgia, serif;
+    color: #f5efe6;
+    /* 深色遮罩 + 背景圖，圖片填滿整個畫面 */
+    background:
+        linear-gradient(rgba(25, 18, 12, 0.6), rgba(25, 18, 12, 0.85)),
+        url("../images/sp98.jpg") center / cover no-repeat fixed;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-
-a{
+a {
     text-decoration: none;
-    color: rgb(255, 236, 243);
+    color: #f5efe6;
     display: inline-block;
 }
 
-a:hover{
-    color: rgb(222, 246, 255);
+a:hover {
+    color: #d4af37;
 }
 
 /*header*/
-header{
+header {
     position: fixed;
     top: 0;
     width: 100%;
     height: auto;
     z-index: 200000;
+    background: rgba(25, 18, 12, 0.45);
+    backdrop-filter: blur(8px);              /* 毛玻璃導覽列 */
+    border-bottom: 1px solid rgba(212, 175, 55, 0.6);
 }
-
 
 /*logo*/
-.logo{
+.logo {
     float: left;
-    width: 120px;
-    background: rgb(238, 243, 78);
+    width: 90px;
 }
 
-.logo img{
+.logo img {
     width: 100%;
     display: block;
     margin: auto;
 }
 
 /*nav*/
-nav{
+nav {
     float: right;
 }
 
-nav a{
-    padding: 50px;
+nav a {
+    padding: 35px 30px;
     font-weight: bold;
+    letter-spacing: 4px;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
 }
 
-nav a:hover{
-    text-decoration: underline;
+nav a:hover {
+    color: #d4af37;
+    border-bottom: 2px solid #d4af37;       /* 金色底線滑出 */
 }
 
 /*menu*/
-.menu{
+.menu {
     width: 80%;
     margin: auto;
+    overflow: hidden;
 }
+
 /*hero*/
-.hero{
-    position: relative;   
+.hero {
+    position: relative;
     width: 100%;
     height: 650px;
     overflow: hidden;
 }
 
-.hero img{
+.hero img {
     width: 100%;
-    object-fit:cover;
-}
-.hero h1{
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    font-size: 150px;
-    color: rgb(252, 235, 242);
-    text-shadow: -3px -3px 0 #0035f5,
-              3px -3px 0 #7b29ee,
-              -3px 3px 0 #601ee5,
-              3px 3px 0 #4116fc;
+    height: 100%;
+    object-fit: cover;
 }
 
-.hero p{
+/* 圖片上加一層漸層，讓文字更清楚 */
+.hero::after {
+    content: "";
     position: absolute;
-    top: 50%;
+    inset: 0;
+    background: linear-gradient(to right, rgba(25, 18, 12, 0.7), transparent);
+}
+
+.hero h1 {
+    position: absolute;
+    z-index: 2;
+    top: 10%;
     left: 10%;
-    color: rgb(254, 254, 254);
+    font-size: clamp(60px, 12vw, 150px);
+    letter-spacing: 10px;
+    color: #f5efe6;
+    text-shadow: 4px 4px 0 #8b3a1e,
+                 8px 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+    position: absolute;
+    z-index: 2;
+    top: 55%;
+    left: 10%;
+    color: #d4af37;
+    letter-spacing: 4px;
 }
 
 /*section*/
-section{
+section {
     clear: both;
     width: 80%;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
-section h1{
-    color:rgba(69, 9, 32, 1);
+section h1 {
+    color: #d4af37;
+    text-align: center;
+    letter-spacing: 8px;
+}
+
+section h2 {
+    color: #d4af37;
     text-align: center;
 }
 
-section h2{
-    color:rgba(69, 9, 32, 1);
+section p {
+    color: #e8a07f;
     text-align: center;
+    letter-spacing: 2px;
 }
-
-section p{
-    color:rgba(69, 9, 32, 1);
-    text-align: center;
-}
-
 
 /*card*/
-.card{
-	display:inline-block;
-	width:24.5%;
-	box-sizing:border-box;
-	padding:10px;
-	text-align:center;
-	cursor:pointer;
+.card {
+    display: inline-block;
+    vertical-align: top;
+    width: 23%;
+    margin: 0.5%;
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    transition: 0.4s;
 }
 
-.card img{
-	width:80%;
-	border-radius:50%;
-	border:solid 1px rgba(69, 9, 32, .2);
-
-    -ms-transform: rotate(0deg); /* IE 9 */
-    -webkit-transform: rotate(0deg); /* Safari */
-    transform: rotate(0deg); /* Standard syntax */
-	
-	transition: transform 1.5s;
-	-webkit-transition: transform 1.5s;
-
+.card:hover {
+    transform: translateY(-12px);
+    background: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
-.card:hover img{
-	-ms-transform: rotate(-20deg); /* IE 9 */
-    -webkit-transform: rotate(-20deg); /* Safari */
-    transform:rotate(-20deg); /* Standard syntax */
+.card a {
+    display: block;
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 150px 150px 10px 10px;   /* 拱門形狀 */
+    transition: transform 0.8s;
+}
+
+.card:hover img {
+    transform: rotate(-3deg) scale(1.06);
 }
 
 /*article*/
-article{
-	width:100%;
+article {
+    width: 100%;
     height: 500px;
-	margin:auto;
-    margin-bottom: 30px;
+    margin: auto;
+    margin-bottom: 60px;
     overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    border-radius: 12px;
 }
 
-
-article:hover{
-	cursor:pointer;	
+article:hover {
+    cursor: pointer;
 }
 
-.a_left{ position:relative;
-	float:left;
-	width:50%;
-    height:100%;
-   
+.a_left {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
 }
 
-.a_left img{
-	float:left;
-	width:100%;
-    height:100%;
-	object-fit:cover;
+.a_left img {
+    float: left;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.a_right{
-	float:left;
-	width:50%;
-    height:100%;
-	padding: 4%;
-	box-sizing:border-box;
-	background:rgba(255, 255, 255, 1);
-	color:rgba(69, 9, 32, 1);
-	text-align:left;
+.a_right {
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: 4%;
+    box-sizing: border-box;
+    background: rgba(25, 18, 12, 0.75);
+    color: #f5efe6;
+    text-align: left;
     line-height: 2rem;
-    
-    transition: color 0.5s, background 0.5s;
-	-webkit-transition: color 0.5s, background 0.5s; /*前綴詞*/
-	
-	transition-timing-function:linear;
-	-webkit-transition-timing-function: linear;/* Safari */
-
+    transition: background 0.5s;
 }
 
-article:hover .a_right{
-	background:rgb(244, 250, 186);
-    color:rgba(69, 9, 32, 1);
+.a_right p {
+    text-align: left;
+    color: #f5efe6;
 }
 
-
-.moreb{
-	position:absolute;
-	top:50%;
-	left:50%;
-	transform: translate(-50%, -50%);
-	
-	background:rgb(141, 229, 246);
-	padding:30px;
-	color: rgb(37, 141, 225);border-radius: 50%;border-color: rgb(249, 249, 252);border-style: solid;border-width: 3px;
-    opacity:0;
-	transition: opacity 1s;
-	-webkit-transition: opacity 1s;/*前綴詞*/
-	
-	transition-timing-function: ease-in-out;
-	-webkit-transition-timing-function: ease-in-out;/* Safari */
-
+article:hover .a_right {
+    background: rgba(90, 60, 20, 0.85);      /* 滑過變暖金色調 */
 }
 
-article:hover .moreb{
-	opacity:1;
+.moreb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #d4af37;
+    padding: 30px;
+    border-radius: 50%;
+    border: 3px solid #f5efe6;
+    opacity: 0;
+    transition: opacity 1s;
 }
 
+.moreb h3 {
+    margin: 0;
+    color: #1e1610;
+    letter-spacing: 2px;
+}
+
+article:hover .moreb {
+    opacity: 1;
+}
+
+/*footer*/
+footer {
+    padding: 20px;
+    text-align: center;
+    color: #d8cdbb;
+    letter-spacing: 2px;
+    background: rgba(0, 0, 0, 0.35);
+    border-top: 1px solid #d4af37;
+}
